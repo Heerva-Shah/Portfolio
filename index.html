@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heerva Shah - Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        } 
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .intro h1 {
+            font-size: 2em;
+            margin: 0;
+        }
+
+        .intro .name {
+            color: #9b59b6;
+        }
+
+        .intro .title {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        nav ul.nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul.nav-links li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul.nav-links li a:hover {
+            color: #9b59b6;
+        }
+
+        nav ul.nav-links li a.active {
+            color: #9b59b6;
+            border-bottom: 2px solid #9b59b6;
+        }
+
+        section {
+            padding: 2rem;
+            background-color: white;
+            margin-bottom: 1rem;
+        }
+
+        #about-preview, #skills-preview {
+            background-color: #f9f9f9;
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        #about-preview h2, #skills-preview h2 {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        #about-preview p, #skills-preview ul {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        #about-preview a {
+            color: #9b59b6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #about-preview a:hover {
+            text-decoration: underline;
+        }
+
+        .project {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        .project h3 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        .project a.repo-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #9b59b6;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            transition: background-color 0.3s;
+        }
+
+        .project a.repo-link:hover {
+            background-color: #8e44ad;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+        }
+
+        footer a {
+            color: #9b59b6;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        img.profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 20px auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: white;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5em;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #9b59b6;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #8e44ad;
+        }
+
+        .page-container {
+            display: none;
+        }
+
+        .page-container.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="intro">
+            <h1><span class="name">Heerva Shah</span></h1>
+            <p class="title">AI Enthusiast | Data Science Explorer | Creative Learner</p>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                <li><a href="#" class="nav-link" data-page="about">About</a></li>
+                <li><a href="#" class="nav-link" data-page="projects">Projects</a></li>
+                <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HOME PAGE -->
+    <div id="home-page" class="page-container active">
+        <section class="hero">
+            <h1>Welcome to My Portfolio</h1>
+            <p class="subtitle">Exploring the intersection of technology and creativity</p>
+            <a href="#" class="cta-button nav-link" data-page="projects">View My Projects</a>
+        </section>
+
+        <section id="about-preview">
+            <h2>About Me</h2>
+            <p>I am a curious learner passionate about AI, Data Science, and Python programming. I love exploring new ideas, experimenting with technology, and expressing myself through dance and K-pop.</p>
+            <a href="#" class="nav-link" data-page="about">Learn more about me →</a>
+        </section>
+
+        <section id="skills-preview">
+            <h2>Skills</h2>
+            <ul>
+                <li>Python | Pandas | NumPy | Matplotlib</li>
+            <li>HTML | CSS  </li>
+            <li>SQL | Database Management</li>
+            <li>C | C++ | Java</li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="about-page" class="page-container">
+        <section>
+            <h2>About Me</h2>
+            <img class="profile-pic" src="image/profile.jpg" alt="Profile Picture">
+            <p>I am a curious learner who loves exploring new ideas and constantly growing. I am passionate about discovering what truly excites me, whether it's through technology, creative projects, or personal hobbies. I enjoy diving into the world of AI, Data Science, and Python programming—experimenting with new skills and applying them to interesting projects.</p>
+            <p>At the same time, dancing and K-pop, especially BTS, are some of my favorite ways to express myself, stay inspired, and think creatively. My journey is all about curiosity, embracing challenges, and finding a balance between creativity and technology.</p>
+        </section>
+    </div>
+
+    <!-- PROJECTS PAGE -->
+    <div id="projects-page" class="page-container">
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="project">
+                <h3>Motion Detection System</h3>
+                <p>A computer vision project that detects and highlights motion in real-time video using Python and OpenCV.</p>
+                <a href="https://github.com/yourusername/motion-detection" target="_blank" class="repo-link">View on GitHub →</a>
+            </div>
+            <div class="project">
+                <h3>Sentiment Analyzer</h3>
+                <p>A Python project that analyzes text sentiment (positive/negative/neutral) using TextBlob and visualizes results with charts.</p>
+                <a href="https://github.com/Heerva-Shah/Sentiment-analyzer" target="_blank" class="repo-link">View on GitHub →</a>
+            </div>
+            <div class="project">
+                <h3>Portfolio Website</h3>
+                <p>My personal portfolio website showcasing my skills, projects, and contact information.</p>
+                <a href="https://github.com/yourusername/portfolio-website" target="_blank" class="repo-link">View on GitHub →</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact-page" class="page-container">
+        <section id="contact" style="margin-bottom: 0;">
+            <h2>Contact Me</h2>
+            <p><strong>Email:</strong> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=heerva1501@gmail.com" target="_blank">heerva1501@gmail.com</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/Heerva-Shah" target="_blank">github.com/Heerva-Shah</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2025 Heerva Shah. All rights reserved. | Contact: 
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=heerva1501@gmail.com" target="_blank">heerva1501@gmail.com</a>
+        </p>
+    </footer>
+
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pages = document.querySelectorAll('.page-container');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetPage = link.getAttribute('data-page');
+
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+
+                pages.forEach(page => page.classList.remove('active'));
+                document.getElementById(`${targetPage}-page`).classList.add('active');
+
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
